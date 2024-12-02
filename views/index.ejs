@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= name %>'s website</title>
+    <link rel="stylesheet" href="/styles/snow.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/javascript/snow.js" defer></script>
+    <script src="/javascript/videoControl.js" defer></script>
+</head>
+<body>
+    <div id="background-container">
+        <video autoplay muted loop id="background-video">
+            <source src="/media/background.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="click-to-play" onclick="enableVideo()">
+        <i class="fas fa-play"></i>
+    </div>
+
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-img-container">
+                <img src="/images/profile.jpg" alt="Profile Picture" class="profile-img">
+            </div>
+            <h1><%= name %></h1>
+            <p><%= age %> years old</p>
+            <p><%= job %></p>
+            <h3>My interests are</h3>
+            <ul>
+                <% interests.forEach(interest => { %>
+                    <li><%= interest %></li>
+                <% }); %>
+            </ul>
+            <div class="social-links">
+                <a href="<%= socialLinks.github %>" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="<%= socialLinks.spotify %>" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="<%= socialLinks.discord %>" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="<%= socialLinks.steam %>" target="_blank"><i class="fab fa-steam"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
